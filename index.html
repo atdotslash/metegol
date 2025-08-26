@@ -1,70 +1,488 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Torneo de Metegol Escolar</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torneo de Metegol Escolar – EEST N° 1 "Indu Zárate"</title>
+  <meta name="description" content="Torneo de Metegol Escolar en la EEST N° 1 'Indu Zárate'. Inscripciones hasta el 19/09/2025. 16 cupos. Equipos de 2 personas. ¡Premios para los ganadores!" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="canonical" href="https://example.com/torneo-metegol"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="⚽ Torneo de Metegol Escolar – Indu Zárate" />
+  <meta property="og:description" content="Inscripciones hasta el 19/09/2025. Solo 16 cupos. Equipos de 2 personas. ¡Premios!" />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230ea5e9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='64' fill='white'>Torneo de Metegol</text></svg>" />
+  <meta property="og:locale" content="es_AR" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
-    body {
-      background: linear-gradient(120deg, #0e2a47, #c0c0c0);
-      font-family: Arial, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --muted: #8ea1c0;
+      --text: #eaf2ff;
+      --accent: #0ea5e9; /* celeste */
+      --accent-2: #22c55e; /* verde */
+      --warning: #f59e0b; /* amarillo */
+      --danger: #ef4444; /* rojo */
+      --ring: rgba(14,165,233,.35);
+      --shadow: 0 20px 40px rgba(2,6,23,.5);
     }
-    header {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 30px 10px;
-    }
-    h1 {
-      font-size: 2.8em;
-      margin: 0;
-    }
-    .info {
-      padding: 20px;
-    }
-    .info p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-    .boton-inscribirse {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.1em;
-      transition: background 0.3s;
-    }
-    .boton-inscribirse:hover {
-      background-color: #0056b3;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #e0e0e0;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 800px at 20% -10%, #0b3b5a 0%, transparent 60%), radial-gradient(900px 600px at 120% 10%, #1b2b5a 0%, transparent 70%), var(--bg);}
+    a{color:inherit}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(180deg, rgba(14,165,233,.15), rgba(14,165,233,.05));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;padding:32px}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,4vw,48px);line-height:1.1;margin:0 0 8px}
+    .sub{font-size:clamp(16px,1.8vw,18px);color:var(--muted);margin:0 0 20px}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 22px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:14px;background:var(--accent);color:#001627;text-decoration:none;font-weight:700;box-shadow:0 10px 24px rgba(14,165,233,.35);border:1px solid rgba(255,255,255,.08)}
+    .btn:hover{filter:brightness(1.05)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width: 800px){.grid{grid-template-columns:1fr 1fr}} @media (max-width: 520px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:18px 18px;border-radius:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .list{margin:10px 0 0;padding:0 0 0 20px;color:#cfddff}
+    .list li{margin:8px 0}
+    .kpi{display:flex;align-items:baseline;gap:10px}
+    .kpi .n{font-size:32px;font-weight:800}
+    .kpi .label{color:var(--muted)}
+    footer{opacity:.9;margin-top:28px;text-align:center;color:var(--muted)}
+    .stamp{position:absolute;right:-40px;top:-40px;rotate:15deg;background:conic-gradient(from 0deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border:1px dashed rgba(255,255,255,.25);width:180px;height:180px;border-radius:50%;display:grid;place-items:center;color:#fff}
+    .stamp b{font-size:18px;text-align:center}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.35);}
+    .countdown{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+    .clock{min-width:88px;text-align:center;padding:10px 10px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+    .clock .num{font-size:24px;font-weight:800}
+    .section-title{font-size:22px;margin:0 0 8px}
+    .howto{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width: 900px){.howto{grid-template-columns:1fr}}
+    .step{display:flex;gap:12px}
+    .step .dot{width:28px;height:28px;border-radius:10px;background:rgba(14,165,233,.15);border:1px solid rgba(14,165,233,.35);display:grid;place-items:center;font-weight:800;color:#a8e9ff}
+    .share{display:flex;gap:10px;flex-wrap:wrap}
+    .tiny{font-size:12px;color:var(--muted)}
+    .logo-mark{font-weight:900;letter-spacing:.5px}
+
+    /* Bracket */
+    .bracket{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;overflow:auto}
+    .round{display:grid;gap:12px}
+    .match{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px;background:rgba(255,255,255,.04)}
+    .team{display:flex;align-items:center;gap:8px;justify-content:space-between}
+    .seed{opacity:.7;font-size:12px}
+
+    /* Schedule table */
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid rgba(255,255,255,.1);padding:8px}
+    th{background:rgba(255,255,255,.06)}
+
+    /* Print */
+    @media print{
+      body{background:#fff;color:#111}
+      .container{max-width:none}
+      header{box-shadow:none}
+      a[href]:after{content:" (" attr(href) ")";font-size:10px;color:#555}
+      .btn,.share,button{display:none !important}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🎉 Torneo de Metegol Escolar 🎉</h1>
-    <p>📅 21 de septiembre | 📍 Escuela Almirante Guillermo Brown</p>
-  </header>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <div>
+          <div class="badges">
+            <span class="badge" title="Sede"><span aria-hidden>📍</span> EEST N° 1 "Indu Zárate"</span>
+            <span class="badge" title="Cupos">🎟️ 16 cupos</span>
+            <span class="badge" title="Fecha">📆 21 de septiembre de 2025</span>
+          </div>
+          <h1>⚽ Torneo de Metegol Escolar</h1>
+          <p class="sub">Equipos de <b>2 personas</b>. Cada equipo debe tener un nombre y puede presentar un logo/dibujo identificatorio (<i>opcional pero valorado</i>). <span class="pill">🥇 ¡Premios para los ganadores!</span></p>
 
-  <section class="info">
-    <p>🧑‍🤝‍🧑 Equipos de 2 personas</p>
-    <p>🏆 Premios para los ganadores</p>
-    <p>⏰ Cierre de inscripción: 19 de septiembre</p>
-    <p>📲 Escaneá el QR o hacé clic en el botón para inscribirte</p>
-    <a class="boton-inscribirse" href="https://wa.me/5493487496784?text=Hola!%20Quiero%20inscribirnos%20al%20torneo%20de%20METEGOL" target="_blank">Inscribite ahora por WhatsApp</a>
-  </section>
+          <div class="kpi" role="status" aria-live="polite">
+            <span class="label">Cierra inscripción en:</span>
+            <div class="countdown" id="countdownClose">
+              <div class="clock"><div class="num" id="dC">--</div><div>días</div></div>
+              <div class="clock"><div class="num" id="hC">--</div><div>horas</div></div>
+              <div class="clock"><div class="num" id="mC">--</div><div>min</div></div>
+              <div class="clock"><div class="num" id="sC">--</div><div>seg</div></div>
+            </div>
+          </div>
 
-  <div class="footer">
-    Organiza: Alumnos de 5° 1ra Grupo A – Proyecto Metegol
+          <div class="kpi" role="status" aria-live="polite">
+            <span class="label">Comienza el torneo en:</span>
+            <div class="countdown" id="countdownEvent">
+              <div class="clock"><div class="num" id="dE">--</div><div>días</div></div>
+              <div class="clock"><div class="num" id="hE">--</div><div>horas</div></div>
+              <div class="clock"><div class="num" id="mE">--</div><div>min</div></div>
+              <div class="clock"><div class="num" id="sE">--</div><div>seg</div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px">
+            <a class="btn" href="https://wa.me/5493487496784?text=Hola!%20Quiero%20inscribirnos%20al%20torneo%20de%20METEGOL" target="_blank" rel="noopener" aria-label="Inscribite ahora por WhatsApp">
+              💬 Inscribite ahora por WhatsApp
+            </a>
+            <a class="btn btn-outline" href="#reglas">📜 Ver reglas</a>
+            <button class="btn btn-outline" id="addCal">🗓️ Agregar al calendario (.ics)</button>
+          </div>
+
+          <p class="tiny">Inscripciones hasta el <b>19 de septiembre de 2025</b> (o hasta agotar los 16 cupos).</p>
+
+          <div class="tiny" style="margin-top:6px">
+            <label>Inscriptos actuales: <input type="number" id="inscriptos" min="0" max="16" value="0" style="width:72px"/></label>
+            <span id="cuposInfo">• Quedan 16 cupos</span>
+          </div>
+        </div>
+        <div style="position:relative">
+          <div class="stamp"><b>Metegol
+            Escolar</b></div>
+          <div class="card" aria-labelledby="kpis">
+            <h3 id="kpis">Datos clave</h3>
+            <div class="grid">
+              <div>
+                <div class="kpi"><div class="n">1</div><div class="label">tiempo de 8 min</div></div>
+                <p class="tiny">Gana el equipo con más goles o quien llegue primero a 4.</p>
+              </div>
+              <div>
+                <div class="kpi"><div class="n">2</div><div class="label">jugadores por equipo</div></div>
+                <p class="tiny">Nombre del equipo y logo/dibujo opcional (¡suma puntos!).</p>
+              </div>
+              <div>
+                <div class="kpi"><div class="n">⚖️</div><div class="label">juego limpio</div></div>
+                <p class="tiny">Sin levantar la mesa ni molinete (&gt;360°).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main style="margin-top:22px">
+      <section id="reglas" class="grid">
+        <article class="card">
+          <h2 class="section-title">⚽ Reglas básicas</h2>
+          <ul class="list">
+            <li>⏱️ <b>Duración:</b> 1 tiempo de 8 minutos.</li>
+            <li>🥅 <b>Victoria:</b> más goles al finalizar o <b>primer equipo en llegar a 4</b>.</li>
+            <li>🚫 <b>Prohibido:</b> levantar el metegol o realizar <i>molinete</i> (giro mayor a 360°).</li>
+            <li>🏆 <b>Empate:</b> <i>gol de oro</i> (primer gol gana).</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2 class="section-title">📏 Reglamento ampliado (sugerido)</h2>
+          <ul class="list">
+            <li>🎲 <b>Saque inicial:</b> moneda o sorteo; luego alterna.</li>
+            <li>🔄 <b>Cambio de lado:</b> al llegar a semifinales o por acuerdo mutuo.</li>
+            <li>⏸️ <b>Tiempo muerto:</b> 1 por equipo (30 s) solo con posesión muerta.</li>
+            <li>🧼 <b>Fair play:</b> está prohibido tapar el arco con objetos o manos.</li>
+            <li>🧑‍⚖️ <b>Arbitraje:</b> decisión inapelable; puede advertir y <b>descalificar</b> por conducta antideportiva.</li>
+            <li>🛠️ <b>Daños:</b> manipulación indebida que dañe la mesa implica derrota del partido.</li>
+          </ul>
+          <p class="tiny">Este reglamento extendido es orientativo para la organización. Podés editarlo a gusto.</p>
+        </article>
+        <article class="card">
+          <h2 class="section-title">📝 Cómo participar</h2>
+          <div class="howto">
+            <div class="step"><span class="dot">1</span><div>
+              <b>Armen el equipo</b> (2 personas) y definan un <b>nombre</b>.
+            </div></div>
+            <div class="step"><span class="dot">2</span><div>
+              (Opcional) Diseñen un <b>logo/dibujo</b> identificatorio.
+            </div></div>
+            <div class="step"><span class="dot">3</span><div>
+              Envíen por <a href="https://wa.me/5493487496784?text=Hola!%20Quiero%20inscribirnos%20al%20torneo%20de%20METEGOL" target="_blank" rel="noopener">WhatsApp</a> los <b>nombres y apellidos completos</b> de ambos.
+            </div></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <h2 class="section-title">📍 Ubicación</h2>
+        <p>EEST N° 1 "Indu Zárate" – Zárate, Buenos Aires, Argentina.</p>
+        <p><a class="btn btn-outline" target="_blank" rel="noopener" href="https://maps.app.goo.gl/">🗺️ Abrir en Google Maps</a></p>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <h2 class="section-title">📣 Contacto &amp; redes</h2>
+        <p>Instagram: <a href="https://instagram.com/electromecproyectos_" target="_blank" rel="noopener">@electromecproyectos_</a></p>
+        <p class="tiny">Organiza: <span class="logo-mark">Alumnos de 5° 1ra Grupo A – Proyecto Metegol</span></p>
+        <div class="share">
+          <button class="btn btn-outline" id="shareBtn">📤 Compartir</button>
+          <button class="btn btn-outline" id="copyBtn">🔗 Copiar enlace</button>
+          <a class="btn btn-outline" href="#faq">❓ FAQ</a>
+        </div>
+      </section>
+
+      <section id="faq" class="card" style="margin-top:18px">
+        <h2 class="section-title">❓ Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Puedo inscribirme después del 19/09?</summary>
+          <p>No. El cierre es el <b>19/09/2025</b> a las 23:59 (hora de Argentina) o cuando se completen los 16 cupos.</p>
+        </details>
+        <details>
+          <summary>¿El logo del equipo es obligatorio?</summary>
+          <p>No, es opcional, pero será <b>valorado</b> por la organización.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se define un empate?</summary>
+          <p>Por <i>gol de oro</i>: el primer gol gana.</p>
+        </details>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <h2 class="section-title">📄 Bases &amp; condiciones (sugeridas)</h2>
+        <ul class="list">
+          <li>La inscripción implica aceptar el reglamento del torneo y el código de convivencia de la institución.</li>
+          <li>La organización podrá reprogramar horarios por fuerza mayor.</li>
+          <li>Autorización de uso de imagen: se podrá registrar foto/video del evento con fines pedagógicos y de difusión.</li>
+          <li>Se recomienda presentar DNI para acreditar identidad si fuese necesario.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 – Torneo de Metegol Escolar • Hecho con ❤️ en Zárate</p>
+    </footer>
   </div>
+
+  <!-- Schema.org Event -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Torneo de Metegol Escolar",
+    "startDate": "2025-09-21T10:00:00-03:00",
+    "endDate": "2025-09-21T14:00:00-03:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "EEST N° 1 'Indu Zárate'",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zárate",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Alumnos de 5° 1ra Grupo A – Proyecto Metegol"
+    },
+    "maximumAttendeeCapacity": 32
+  }
+  </script>
+
+  <script>
+    // ===== Utiles =====
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+
+    // ===== Cupos dinámicos (persistencia local) =====
+    const insInput = $('#inscriptos');
+    const cuposInfo = $('#cuposInfo');
+    const CUPOS_MAX = 16;
+    if (insInput && cuposInfo) {
+      const storedInsc = localStorage.getItem('inscriptosActuales');
+      if (storedInsc !== null) insInput.value = +storedInsc;
+      const updateCupos = () => {
+        const n = Math.max(0, Math.min(CUPOS_MAX, Number(insInput.value)||0));
+        insInput.value = n;
+        localStorage.setItem('inscriptosActuales', n);
+        const left = CUPOS_MAX - n;
+        cuposInfo.textContent = `• Quedan ${left} cupo${left===1?'':'s'}`;
+        cuposInfo.style.color = left <= 3 ? '#fca5a5' : '';
+      };
+      insInput.addEventListener('input', updateCupos);
+      updateCupos();
+    }
+
+    // ===== Countdowns =====
+    // Fechas en horario de Argentina (-03:00)
+    const closeAt = new Date('2025-09-19T23:59:59-03:00');
+    const eventAt = new Date('2025-09-21T10:00:00-03:00');
+
+    function tickCountdown(target, ids) {
+      const now = new Date();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff / (24*3600e3));
+      diff -= d*24*3600e3;
+      const h = Math.floor(diff / 3600e3);
+      diff -= h*3600e3;
+      const m = Math.floor(diff / 60e3);
+      diff -= m*60e3;
+      const s = Math.floor(diff / 1e3);
+      $(ids.d).textContent = String(d).padStart(2,'0');
+      $(ids.h).textContent = String(h).padStart(2,'0');
+      $(ids.m).textContent = String(m).padStart(2,'0');
+      $(ids.s).textContent = String(s).padStart(2,'0');
+    }
+
+    setInterval(() => tickCountdown(closeAt, {d:'#dC',h:'#hC',m:'#mC',s:'#sC'}), 1000);
+    setInterval(() => tickCountdown(eventAt, {d:'#dE',h:'#hE',m:'#mE',s:'#sE'}), 1000);
+    tickCountdown(closeAt, {d:'#dC',h:'#hC',m:'#mC',s:'#sC'});
+    tickCountdown(eventAt, {d:'#dE',h:'#hE',m:'#mE',s:'#sE'});
+
+    // ===== Compartir / Copiar enlace =====
+    const shareBtn = $('#shareBtn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        const data = {
+          title: 'Torneo de Metegol Escolar',
+          text: '¡Sumate al Torneo de Metegol Escolar en la Indu Zárate! Inscripciones hasta el 19/09.',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(data); } catch(e) {}
+        } else {
+          await navigator.clipboard.writeText(data.url);
+          shareBtn.textContent = '✅ Enlace copiado';
+          setTimeout(()=> shareBtn.textContent = '📤 Compartir', 1500);
+        }
+      });
+    }
+    const copyBtn = $('#copyBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(location.href);
+        copyBtn.textContent = '✅ Copiado';
+        setTimeout(()=> copyBtn.textContent = '🔗 Copiar enlace', 1500);
+      });
+    }
+
+    // ===== .ics (Agregar al calendario) =====
+    const addCal = $('#addCal');
+    if (addCal) {
+      addCal.addEventListener('click', () => {
+        const dtStart = '20250921T100000';
+        const dtEnd   = '20250921T120000';
+        const ics = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Indu Zarate//Torneo Metegol//ES',
+          'CALSCALE:GREGORIAN',
+          'BEGIN:VEVENT',
+          'DTSTART;TZID=America/Argentina/Buenos_Aires:' + dtStart,
+          'DTEND;TZID=America/Argentina/Buenos_Aires:' + dtEnd,
+          'SUMMARY:Torneo de Metegol Escolar – EEST N° 1 "Indu Zárate"',
+          'DESCRIPTION:Equipos de 2. Reglas: 8 min por partido, gol de oro. Inscripción hasta 19/09.',
+          'LOCATION:EEST N° 1 "Indu Zárate", Zárate, Buenos Aires',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\r\n');
+        const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'torneo-metegol.ics';
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+      });
+    }
+
+    // ===== Fixture =====
+    const teamsTA = $('#teams');
+    const bracket = $('#bracket');
+    const makeFixtureBtn = $('#makeFixture');
+    const clearFixtureBtn = $('#clearFixture');
+    let currentMatches = [];
+
+    function renderBracket(rounds) {
+      bracket.innerHTML = '';
+      const roundNames = ['Octavos (R16)','Cuartos','Semifinal','Final'];
+      rounds.forEach((matches, idx) => {
+        const col = document.createElement('div');
+        col.className = 'round';
+        const title = document.createElement('h4');
+        title.textContent = roundNames[idx] || ('Ronda ' + (idx+1));
+        title.className = 'tiny';
+        col.appendChild(title);
+        matches.forEach((m,i) => {
+          const card = document.createElement('div');
+          card.className = 'match';
+          const t1 = document.createElement('div');
+          t1.className = 'team';
+          t1.innerHTML = '<span><span class="seed">#' + (m.s1) + '</span> ' + m.a + '</span><input type="number" min="0" style="width:60px" placeholder="goles">';
+          const t2 = document.createElement('div');
+          t2.className = 'team';
+          t2.innerHTML = '<span><span class="seed">#' + (m.s2) + '</span> ' + m.b + '</span><input type="number" min="0" style="width:60px" placeholder="goles">';
+          card.appendChild(t1); card.appendChild(t2);
+          col.appendChild(card);
+        });
+        bracket.appendChild(col);
+      });
+    }
+
+    function makeFixture() {
+      const lines = teamsTA.value.split(/\n|\r/).map(s=>s.trim()).filter(Boolean).slice(0,16);
+      while (lines.length < 16) lines.push('Equipo ' + (lines.length+1));
+      // Emparejar 1-16,2-15,3-14,... (semilla simple)
+      const seeds = lines.map((name,idx)=>({name, seed: idx+1}));
+      const r16 = [];
+      for (let i=0;i<8;i++){
+        r16.push({a: seeds[i].name, s1: seeds[i].seed, b: seeds[15-i].name, s2: seeds[15-i].seed});
+      }
+      const r8 = Array(4).fill(0).map((_,i)=>({a: 'Ganador R16-' + (2*i+1), s1: '-', b: 'Ganador R16-' + (2*i+2), s2: '-'}));
+      const r4 = Array(2).fill(0).map((_,i)=>({a: 'Ganador QF-' + (2*i+1), s1: '-', b: 'Ganador QF-' + (2*i+2), s2: '-'}));
+      const r2 = [{a:'Ganador SF-1', s1:'-', b:'Ganador SF-2', s2:'-'}];
+      currentMatches = [r16,r8,r4,r2];
+      renderBracket(currentMatches);
+    }
+
+    if (makeFixtureBtn) makeFixtureBtn.addEventListener('click', makeFixture);
+    if (clearFixtureBtn) clearFixtureBtn.addEventListener('click', () => { teamsTA.value=''; bracket.innerHTML=''; currentMatches=[]; });
+
+    // ===== Cronograma =====
+    const startDT = $('#startDT');
+    const dur = $('#dur');
+    const gap = $('#gap');
+    const tables = $('#tables');
+    const makeScheduleBtn = $('#makeSchedule');
+    const scheduleWrap = $('#scheduleWrap');
+
+    function toArgTimeString(d){
+      const pad = n => String(n).padStart(2,'0');
+      return pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
+
+    function makeSchedule(){
+      const base = new Date(startDT.value || '2025-09-21T10:00');
+      const dMin = Math.max(1, Number(dur.value)||8);
+      const gMin = Math.max(0, Number(gap.value)||4);
+      const tbl = Math.max(1, Math.min(4, Number(tables.value)||1));
+
+      // Número de partidos: si hay fixture, contarlos; si no, 15 (eliminación directa 16 equipos)
+      let matches = 15;
+      if (currentMatches.length) {
+        matches = currentMatches.reduce((acc,round)=> acc + round.length, 0);
+      }
+      let rows = [];
+      let t = new Date(base);
+      let m = 1;
+      while (m <= matches){
+        for (let k=1;k<=tbl && m<=matches;k++){
+          rows.push({hora: toArgTimeString(t), mesa: k, partido: m});
+          m++;
+        }
+        t = new Date(t.getTime() + (dMin + gMin) * 60000);
+      }
+      const table = document.createElement('table');
+      table.innerHTML = '<thead><tr><th>Hora</th><th>Mesa</th><th>Partido</th></tr></thead>';
+      const tb = document.createElement('tbody');
+      rows.forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+r.hora+'</td><td>'+r.mesa+'</td><td>#'+r.partido+'</td>';
+        tb.appendChild(tr);
+      });
+      table.appendChild(tb);
+      scheduleWrap.innerHTML = '';
+      scheduleWrap.appendChild(table);
+    }
+    if (makeScheduleBtn) makeScheduleBtn.addEventListener('click', makeSchedule);
+  </script>
 </body>
 </html>
