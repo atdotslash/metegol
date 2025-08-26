@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Torneo de Metegol Escolar – EEST N° 1 "Indu Zárate"</title>
-  <meta name="description" content="Torneo de Metegol Escolar en la EEST N° 1 'Indu Zárate'. Inscripciones hasta el 19/09/2025. 16 cupos. Equipos de 2 personas. ¡Premios para los ganadores!" />
+  <meta name="description" content="Torneo de Metegol Escolar en la EEST N° 1 'Indu Zárate'. Inscripciones hasta el 16/09/2025. 16 cupos. Equipos de 2 personas. ¡Premios para los ganadores!" />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="canonical" href="https://example.com/torneo-metegol"/>
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="⚽ Torneo de Metegol Escolar – Indu Zárate" />
-  <meta property="og:description" content="Inscripciones hasta el 19/09/2025. Solo 16 cupos. Equipos de 2 personas. ¡Premios!" />
+  <meta property="og:description" content="Inscripciones hasta el 16/09/2025. Solo 16 cupos. Equipos de 2 personas. ¡Premios!" />
   <meta property="og:image" content="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230ea5e9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='64' fill='white'>Torneo de Metegol</text></svg>" />
   <meta property="og:locale" content="es_AR" />
   <!-- Twitter Card -->
@@ -98,7 +98,7 @@
           <div class="badges">
             <span class="badge" title="Sede"><span aria-hidden>📍</span> EEST N° 1 "Indu Zárate"</span>
             <span class="badge" title="Cupos">🎟️ 16 cupos</span>
-            <span class="badge" title="Fecha">📆 21 de septiembre de 2025</span>
+            <span class="badge" title="Fecha">📆 19 de septiembre de 2025</span>
           </div>
           <h1>⚽ Torneo de Metegol Escolar</h1>
           <p class="sub">Equipos de <b>2 personas</b>. Cada equipo debe tener un nombre y puede presentar un logo/dibujo identificatorio (<i>opcional pero valorado</i>). <span class="pill">🥇 ¡Premios para los ganadores!</span></p>
@@ -246,7 +246,7 @@
     </main>
 
     <footer>
-      <p>© 2025 – Torneo de Metegol Escolar • Hecho con ❤️ en Zárate</p>
+      <p>© 2025 – Torneo de Metegol Escolar • Hecho con ❤️ en Zárate por 5to 1ra grupo "A"</p>
     </footer>
   </div>
 
@@ -256,8 +256,8 @@
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Torneo de Metegol Escolar",
-    "startDate": "2025-09-21T10:00:00-03:00",
-    "endDate": "2025-09-21T14:00:00-03:00",
+    "startDate": "2025-09-19T10:00:00-03:00",
+    "endDate": "2025-09-19T14:00:00-03:00",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
@@ -304,8 +304,8 @@
 
     // ===== Countdowns =====
     // Fechas en horario de Argentina (-03:00)
-    const closeAt = new Date('2025-09-19T23:59:59-03:00');
-    const eventAt = new Date('2025-09-21T10:00:00-03:00');
+    const closeAt = new Date('2025-09-16T23:59:59-03:00');
+    const eventAt = new Date('2025-09-19T10:00:00-03:00');
 
     function tickCountdown(target, ids) {
       const now = new Date();
@@ -334,7 +334,7 @@
       shareBtn.addEventListener('click', async () => {
         const data = {
           title: 'Torneo de Metegol Escolar',
-          text: '¡Sumate al Torneo de Metegol Escolar en la Indu Zárate! Inscripciones hasta el 19/09.',
+          text: '¡Sumate al Torneo de Metegol Escolar en la Indu Zárate! Inscripciones hasta el 16/09.',
           url: location.href
         };
         if (navigator.share) {
@@ -359,8 +359,8 @@
     const addCal = $('#addCal');
     if (addCal) {
       addCal.addEventListener('click', () => {
-        const dtStart = '20250921T100000';
-        const dtEnd   = '20250921T120000';
+        const dtStart = '20250919T100000';
+        const dtEnd   = '20250919T120000';
         const ics = [
           'BEGIN:VCALENDAR',
           'VERSION:2.0',
@@ -370,7 +370,7 @@
           'DTSTART;TZID=America/Argentina/Buenos_Aires:' + dtStart,
           'DTEND;TZID=America/Argentina/Buenos_Aires:' + dtEnd,
           'SUMMARY:Torneo de Metegol Escolar – EEST N° 1 "Indu Zárate"',
-          'DESCRIPTION:Equipos de 2. Reglas: 8 min por partido, gol de oro. Inscripción hasta 19/09.',
+          'DESCRIPTION:Equipos de 2. Reglas: 8 min por partido, gol de oro. Inscripción hasta 16/09.',
           'LOCATION:EEST N° 1 "Indu Zárate", Zárate, Buenos Aires',
           'END:VEVENT',
           'END:VCALENDAR'
@@ -450,7 +450,7 @@
     }
 
     function makeSchedule(){
-      const base = new Date(startDT.value || '2025-09-21T10:00');
+      const base = new Date(startDT.value || '2025-09-19T10:00');
       const dMin = Math.max(1, Number(dur.value)||8);
       const gMin = Math.max(0, Number(gap.value)||4);
       const tbl = Math.max(1, Math.min(4, Number(tables.value)||1));
@@ -486,3 +486,4 @@
   </script>
 </body>
 </html>
+
